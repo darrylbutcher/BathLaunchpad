@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,25 +8,29 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.darryl.bathlaunchpad.MainActivity">
-
-    <Button
-        android:text="Give a hand?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="195dp"
-        android:id="@+id/giveBtn"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+    tools:context="com.example.darryl.bathlaunchpad.MainActivity"
+    android:weightSum="1">
 
     <Button
         android:text="Need a hand?"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="96dp"
         android:id="@+id/needBtn"
         android:elevation="0dp"
-        android:layout_marginBottom="61dp"
+        android:layout_marginBottom="65dp"
         android:layout_alignBottom="@+id/giveBtn"
-        android:layout_alignStart="@+id/giveBtn" />
-</RelativeLayout>
+        android:layout_alignStart="@+id/giveBtn"
+        android:layout_weight="0.37" />
+
+    <Button
+        android:text="Give a hand?"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:id="@+id/giveBtn"
+        android:elevation="0dp"
+        android:layout_marginBottom="65dp"
+        android:layout_alignBottom="@+id/giveBtn"
+        android:layout_alignStart="@+id/giveBtn"
+        android:layout_weight="0.37" />
+
+</LinearLayout>
