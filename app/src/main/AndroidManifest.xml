@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GiveHand" />
+        <activity android:name=".GiveHand"/>
         <activity android:name=".NeedHand" />
         <activity android:name=".FindJobs" />
         <activity android:name=".ViewApplicants" />

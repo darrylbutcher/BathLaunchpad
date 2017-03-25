@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Job Title:"/>
+            android:text="  Job Title:"/>
 
         <EditText
             android:id="@+id/JobTxt"
@@ -46,7 +46,6 @@
             android:layout_weight="0.75"
             android:ems="10" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -56,10 +55,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Description:" />
+            android:text="  Job Role:"/>
 
         <EditText
-            android:id="@+id/descriptionTxt"
+            android:id="@+id/roleTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
@@ -75,10 +74,68 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Time Period" />
+            android:text="  Location:"
+             />
 
         <EditText
-            android:id="@+id/timeTxt"
+            android:id="@+id/LocationTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="  Description:"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:id="@+id/descriptionTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="  Date:"/>
+
+        <EditText
+            android:id="@+id/dateTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="  Hours:"
+            android:id="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/hoursTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
@@ -95,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.25"
-            android:text="Salary" />
+            android:text="  Pay:" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -104,7 +161,7 @@
             android:orientation="horizontal" >
 
             <EditText
-                android:id="@+id/salaryTxt"
+                android:id="@+id/payTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
@@ -122,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.25"
-            android:text="Skills" />
+            android:text="  Skills:" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -145,6 +202,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:text="submit"
+            android:layout_weight="1" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -156,13 +221,6 @@
             android:layout_weight="0.75"
             android:orientation="horizontal"
             android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnSubmit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:text="submit" />
 
 
         </LinearLayout>

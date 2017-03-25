@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/colorAccent"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -37,10 +38,47 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Name:"/>
+            android:text="First Name:"/>
 
         <EditText
-            android:id="@+id/nameTxt"
+            android:id="@+id/firstNameTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Last Name:"/>
+
+        <EditText
+            android:id="@+id/lastNameTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Date of Birth:"/>
+
+        <EditText
+            android:id="@+id/DOBTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
@@ -65,6 +103,26 @@
             android:layout_weight="0.75"
             android:ems="10" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Skills:" />
+
+        <EditText
+            android:id="@+id/skillsTxt"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.75"
+            android:ems="10" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="fill_parent"
