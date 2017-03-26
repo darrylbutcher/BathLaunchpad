@@ -14,6 +14,7 @@ public class GiveHandMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Menu:");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_give_hand_menu);
         Intent myIntent=getIntent();

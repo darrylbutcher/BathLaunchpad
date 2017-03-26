@@ -10,11 +10,13 @@ public class ViewProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- View Profile:");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
         Intent intent=getIntent();
         int ID= intent.getIntExtra("UserID",0);
-        ID=2;
+        IDs a= new IDs();
+        ID= a.getUserID();
         TextView text=(TextView) findViewById(R.id.textBox);
         text.setTextSize(25);
         String profile="";

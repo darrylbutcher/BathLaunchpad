@@ -30,6 +30,7 @@ public class FindJobs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Find A job!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_jobs);
         Intent intent=getIntent();
@@ -39,7 +40,7 @@ public class FindJobs extends AppCompatActivity {
         array = new ArrayList<>();
         Cursor res=JDBH.getAllData();
         String temp="";
-        String img="http://combiboilersleeds.com/images/money/money-2.jpg";
+        String img="http://www.logologo.com/logos/generic-globe-vector-logo.jpg";
         while(res.moveToNext()){
             int id=Integer.valueOf(res.getString(0));
             temp+=("Job Title: "+res.getString(1)+"\n");

@@ -25,6 +25,7 @@ public class NeedHand extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Job Description:");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_need_hand);
         JDBH=new JobsDbHelper(this);
@@ -42,7 +43,9 @@ public class NeedHand extends AppCompatActivity {
                        Toast.makeText(NeedHand.this, "Job Added", Toast.LENGTH_LONG).show();
                         Intent intent= new Intent(NeedHand.this,NeedHandMenu.class);
                         int JobID= getJobID();
-                        Toast.makeText(NeedHand.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
+                        IDs a= new IDs();
+                        a.setJobID(JobID);
+                        //Toast.makeText(NeedHand.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
                         intent.putExtra("JobID",JobID);
                         startActivity(intent);
                         clearText();

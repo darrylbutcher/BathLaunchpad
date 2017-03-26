@@ -1,8 +1,8 @@
 package com.example.darryl.bathlaunchpad;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,8 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private Boolean need;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- It Works for you");
+        //getActionBar().setIcon(R.drawable.icon);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        ImageView icon= new ImageView(this);
+//        icon.setImageResource(R.drawable.icon);
+
+
         give=true;
         need=true;
         giveHandThread();

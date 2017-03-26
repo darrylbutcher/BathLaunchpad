@@ -12,12 +12,17 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="0.25"
-            android:text="USER PROFILE"
+            android:text="User Profile:"
+            android:textAllCaps="false"
+            android:background="#FF6633"
+            android:textSize="35dp"
+            android:textColor="#FFFFFF"
+            android:gravity="start"
             style="@android:style/Widget.Material.TextView"
             tools:textAlignment="center"
-            android:textColor="@android:color/background_dark"
+
             tools:textSize="30sp" />
     </LinearLayout>
 

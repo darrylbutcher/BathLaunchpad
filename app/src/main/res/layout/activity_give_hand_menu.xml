@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        app:srcCompat="@drawable/logo"
+        android:id="@+id/imageView3" />
+
     <Button
         android:text="Find Jobs!"
         android:layout_width="match_parent"
-        android:layout_height="212dp"
+        android:layout_height="150dp"
+        android:textAllCaps="false"
+        android:background="#FF8800"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
         android:id="@+id/findJobBtn" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
     <Button
         android:text="View offers!"
         android:layout_width="match_parent"
-        android:layout_height="235dp"
-        android:id="@+id/ViewOffersBtn" />
+        android:layout_height="150dp"
+        android:id="@+id/ViewOffersBtn"
+        android:textAllCaps="false"
+        android:background="#FF8800"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"/>
+    />
 </LinearLayout>

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class NeedHandMenu extends AppCompatActivity {
 
@@ -16,6 +15,7 @@ public class NeedHandMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_need_hand_menu);
         Intent intent=getIntent();
@@ -30,7 +30,7 @@ public class NeedHandMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(NeedHandMenu.this,ViewApplicants.class);
                 intent.putExtra("JobID",JobID);
-                Toast.makeText(NeedHandMenu.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
+                //Toast.makeText(NeedHandMenu.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });

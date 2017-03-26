@@ -13,16 +13,18 @@ public class ViewOffers extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- View Offers");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_offers);
         Intent intent=getIntent();
         UserID=intent.getIntExtra("UserID", 0);
+        IDs a=new IDs();
+        UserID=a.getUserID();
         MatchesDbHelper MBDH= new MatchesDbHelper(this);
         Cursor res=MBDH.getJobs(UserID);
         LinearLayout panel=(LinearLayout)findViewById(R.id.pane1);
         res.getCount();
         while(res.moveToNext()){
-
             int JobID=res.getInt(0);
             JobsDbHelper JDBH=new JobsDbHelper(this);
             String names=JDBH.getName(JobID);

@@ -23,6 +23,7 @@ public class GiveHand extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Tell us about yourself...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_give_hand);
         EDBH=new EmployeeDbHelper(this);
@@ -41,6 +42,9 @@ public class GiveHand extends AppCompatActivity {
 
 
                         Intent intent= new Intent(GiveHand.this,GiveHandMenu.class);
+                        int id=getUserID();
+                        IDs a= new IDs();
+                        a.setUserID(id);
                         intent.putExtra("UserID",getUserID());
                         startActivity(intent);
                         Toast.makeText(GiveHand.this, "Job Added", Toast.LENGTH_LONG).show();

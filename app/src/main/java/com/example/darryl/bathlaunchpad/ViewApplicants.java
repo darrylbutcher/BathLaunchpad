@@ -17,11 +17,13 @@ public class ViewApplicants extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTitle("H!RED- Your Applicants:");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_applicants);
         Intent intent=getIntent();
         JobID= intent.getIntExtra("JobID",0);
-        JobID=5;
+        IDs a=new IDs();
+        JobID=a.getJobID();
         //Toast.makeText(ViewApplicants.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
         MatchesDbHelper MBDH= new MatchesDbHelper(this);
         Cursor res=MBDH.getUsers(JobID);

@@ -13,9 +13,12 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="00dp"
             android:layout_weight="0.25"
             android:text="Applications"
+            android:textAllCaps="false"
+            android:background="#FF6633"
+            android:textSize="35dp"
             style="@android:style/Widget.Material.TextView"
             tools:textAlignment="center"
             android:textColor="@android:color/background_dark"
