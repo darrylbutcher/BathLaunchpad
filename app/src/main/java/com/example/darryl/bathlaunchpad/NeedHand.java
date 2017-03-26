@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class NeedHand extends AppCompatActivity {
 
     public Button submit;
+    private JobsDbHelper JDBH;
     private String JobTitle;
     private String JobRole;
     private String Description;
@@ -24,6 +25,7 @@ public class NeedHand extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_need_hand);
+        JDBH=new JobsDbHelper(this);
         submitThread();
     }
 
@@ -32,12 +34,16 @@ public class NeedHand extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if(checkInput()){
-                    Toast.makeText(NeedHand.this, "Data Added", Toast.LENGTH_LONG).show();
-                    //addData();
-                    Intent intent= new Intent(NeedHand.this,ViewApplicants.class);
-                    startActivity(intent);
+                    boolean isInserted=JDBH.insertData(JobTitle,JobRole,Location,Description,Date,Hours,Pay,Skills);
+                    if(isInserted){
+                       Toast.makeText(NeedHand.this, "Job Added", Toast.LENGTH_LONG).show();
+                        Intent intent= new Intent(NeedHand.this,ViewApplicants.class);
+                        startActivity(intent);
+                        clearText();
+                    }else{
+                        Toast.makeText(NeedHand.this, "Failed", Toast.LENGTH_LONG).show();
+                    }
                 }else{
                     Toast.makeText(NeedHand.this, "ERROR! Make sure you fill in all fields!", Toast.LENGTH_LONG).show();
                 }
