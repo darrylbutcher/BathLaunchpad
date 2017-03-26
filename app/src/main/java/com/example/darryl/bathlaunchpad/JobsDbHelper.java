@@ -10,7 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class JobsDbHelper extends SQLiteOpenHelper {
+public  class JobsDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Jobs.db";
     public static final String TABLE_NAME = "job_table";
@@ -41,6 +41,7 @@ public class JobsDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
 
     public boolean insertData(String title, String role, String location, String description, String date, String hours, String pay, String skills) {
         SQLiteDatabase db = this.getWritableDatabase();

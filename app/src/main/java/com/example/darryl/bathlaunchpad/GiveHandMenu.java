@@ -10,14 +10,17 @@ public class GiveHandMenu extends AppCompatActivity {
 
     public Button findJobs;
     public Button viewOffers;
+    private int ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_give_hand_menu);
+        this.ID=1;
         viewOffersThread();
         findJobsThread();
     }
+
 
     public void viewOffersThread(){
         viewOffers=(Button)findViewById(R.id.ViewOffersBtn);

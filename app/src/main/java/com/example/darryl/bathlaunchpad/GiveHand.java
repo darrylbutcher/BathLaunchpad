@@ -1,12 +1,11 @@
 package com.example.darryl.bathlaunchpad;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class GiveHand extends AppCompatActivity {
 
@@ -31,18 +30,20 @@ public class GiveHand extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkInput()){
-                    if(true){
-                        Toast.makeText(GiveHand.this, "Data Added", Toast.LENGTH_LONG).show();
-                        Intent intent= new Intent(GiveHand.this,ViewApplicants.class);
-                        startActivity(intent);
-                        clearText();
-                    }else{
-                        Toast.makeText(GiveHand.this, "Failed", Toast.LENGTH_LONG).show();
-                    }
-                }else{
-                    Toast.makeText(GiveHand.this, "ERROR! Make sure you fill in all fields!", Toast.LENGTH_LONG).show();
-                }
+                Intent intent= new Intent(GiveHand.this,GiveHandMenu.class);
+                startActivity(intent);
+//                if(checkInput()){
+//                    if(true){
+//                        Toast.makeText(GiveHand.this, "Data Added", Toast.LENGTH_LONG).show();
+//                        Intent intent= new Intent(GiveHand.this,ViewApplicants.class);
+//                        startActivity(intent);
+//                        clearText();
+//                    }else{
+//                        Toast.makeText(GiveHand.this, "Failed", Toast.LENGTH_LONG).show();
+//                    }
+//                }else{
+//                    Toast.makeText(GiveHand.this, "ERROR! Make sure you fill in all fields!", Toast.LENGTH_LONG).show();
+//                }
             }
         });
     }

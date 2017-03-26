@@ -1,21 +1,22 @@
 package com.example.darryl.bathlaunchpad;
 
-        import android.content.Context;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.BaseAdapter;
-        import android.widget.FrameLayout;
-        import android.widget.ImageView;
-        import android.widget.TextView;
+import android.content.Context;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-        import com.bumptech.glide.Glide;
-        import com.lorentzos.flingswipe.SwipeFlingAdapterView;
+import com.bumptech.glide.Glide;
+import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FindJobs extends AppCompatActivity {
 
@@ -23,16 +24,31 @@ public class FindJobs extends AppCompatActivity {
     public static ViewHolder viewHolder;
     private ArrayList<Data> array;
     private SwipeFlingAdapterView flingContainer;
+    private JobsDbHelper JDBH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_jobs);
-
+        JDBH=new JobsDbHelper(this);
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
-        //Add database link here
         array = new ArrayList<>();
-        array.add(new Data("https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15079077_1151908424899508_6944066607216229104_n.jpg?oh=44c35d859b7c2d9859732b71177d5ca1&oe=5953BAEF", " Pls sleep with me."));
+        Cursor res=JDBH.getAllData();
+        String temp="";
+        String img="http://combiboilersleeds.com/images/money/money-2.jpg";
+        while(res.moveToNext()){
+            int id=Integer.valueOf(res.getString(0));
+            temp+=("Job Title: "+res.getString(1)+"\n");
+            temp+=("Job Role: "+res.getString(2)+"\n");
+            temp+=("Location: "+res.getString(3)+"\n");
+            temp+=("Description: "+res.getString(4)+"\n");
+            temp+=("Date: "+res.getString(5)+"\n");
+            temp+=("Hours: "+res.getString(6)+"\n");
+            temp+=("Pay: "+res.getString(7)+"\n");
+            temp+=("Skills: "+res.getString(8));
+            array.add(new Data(img, id,temp));
+            temp="";
+        }
 
         myAppAdapter = new MyAppAdapter(array, FindJobs.this);
         flingContainer.setAdapter(myAppAdapter);
@@ -51,7 +67,7 @@ public class FindJobs extends AppCompatActivity {
 
             @Override
             public void onRightCardExit(Object dataObject) {
-
+                int JobID=array.get(0).getID();
                 array.remove(0);
                 myAppAdapter.notifyDataSetChanged();
                 //Add to found jobs database??
@@ -131,8 +147,10 @@ public class FindJobs extends AppCompatActivity {
                 LayoutInflater inflater = getLayoutInflater();
                 rowView = inflater.inflate(R.layout.item, parent, false);
                 // configure view holder
+
                 viewHolder = new ViewHolder();
                 viewHolder.DataText = (TextView) rowView.findViewById(R.id.bookText);
+                viewHolder.DataText.setTextSize(30);
                 viewHolder.background = (FrameLayout) rowView.findViewById(R.id.background);
                 viewHolder.cardImage = (ImageView) rowView.findViewById(R.id.cardImage);
                 rowView.setTag(viewHolder);
