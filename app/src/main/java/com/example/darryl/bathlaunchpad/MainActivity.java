@@ -10,11 +10,14 @@ public class MainActivity extends AppCompatActivity {
 
     public Button giveHandBtn;
     public Button needHandBtn;
-
+    private Boolean give;
+    private Boolean need;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        give=true;
+        need=true;
         giveHandThread();
         needHandThread();
     }
@@ -24,8 +27,14 @@ public class MainActivity extends AppCompatActivity {
         giveHandBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(give){
                 Intent intent= new Intent(MainActivity.this,GiveHand.class);
                 startActivity(intent);
+                    give=false;
+                }else{
+                    Intent intent= new Intent(MainActivity.this,GiveHandMenu.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -35,8 +44,15 @@ public class MainActivity extends AppCompatActivity {
         needHandBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MainActivity.this,NeedHand.class);
-                startActivity(intent);
+                if(need){
+                    Intent intent= new Intent(MainActivity.this,NeedHand.class);
+                    startActivity(intent);
+                    need=false;
+                }else{
+                    Intent intent= new Intent(MainActivity.this,NeedHandMenu.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }

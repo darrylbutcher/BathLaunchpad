@@ -1,6 +1,7 @@
 package com.example.darryl.bathlaunchpad;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,11 +26,14 @@ public class FindJobs extends AppCompatActivity {
     private ArrayList<Data> array;
     private SwipeFlingAdapterView flingContainer;
     private JobsDbHelper JDBH;
+    private int UserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_jobs);
+        Intent intent=getIntent();
+        this.UserID=intent.getIntExtra("UserID", 0);
         JDBH=new JobsDbHelper(this);
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         array = new ArrayList<>();
@@ -49,7 +53,8 @@ public class FindJobs extends AppCompatActivity {
             array.add(new Data(img, id,temp));
             temp="";
         }
-
+        String finalimg="https://images.washingtonpost.com/?url=http://img.washingtonpost.com/news/morning-mix/wp-content/uploads/sites/21/2015/06/sleepy-face.png&w=1484&op=resize&opt=1&filter=antialias";
+        array.add(new Data(finalimg,-1,"NO MORE JOBS LEFT :("));
         myAppAdapter = new MyAppAdapter(array, FindJobs.this);
         flingContainer.setAdapter(myAppAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {

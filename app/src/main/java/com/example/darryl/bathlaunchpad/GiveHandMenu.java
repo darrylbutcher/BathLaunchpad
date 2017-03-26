@@ -16,7 +16,8 @@ public class GiveHandMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_give_hand_menu);
-        this.ID=1;
+        Intent myIntent=getIntent();
+        this.ID=myIntent.getIntExtra("UserID", 0);
         viewOffersThread();
         findJobsThread();
     }
@@ -28,6 +29,7 @@ public class GiveHandMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(GiveHandMenu.this,ViewOffers.class);
+                intent.putExtra("UserID",ID);
                 startActivity(intent);
             }
         });
@@ -39,6 +41,7 @@ public class GiveHandMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(GiveHandMenu.this,FindJobs.class);
+                intent.putExtra("UserID",ID);
                 startActivity(intent);
             }
         });

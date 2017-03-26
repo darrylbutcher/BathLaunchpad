@@ -1,6 +1,7 @@
 package com.example.darryl.bathlaunchpad;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,7 @@ public class NeedHand extends AppCompatActivity {
 
     public Button submit;
     private JobsDbHelper JDBH;
+    private int JobID;
     private String JobTitle;
     private String JobRole;
     private String Description;
@@ -38,7 +40,8 @@ public class NeedHand extends AppCompatActivity {
                     boolean isInserted=JDBH.insertData(JobTitle,JobRole,Location,Description,Date,Hours,Pay,Skills);
                     if(isInserted){
                        Toast.makeText(NeedHand.this, "Job Added", Toast.LENGTH_LONG).show();
-                        Intent intent= new Intent(NeedHand.this,ViewApplicants.class);
+                        Intent intent= new Intent(NeedHand.this,NeedHandMenu.class);
+                        intent.putExtra("JobID",getJobID());
                         startActivity(intent);
                         clearText();
                     }else{
@@ -49,6 +52,16 @@ public class NeedHand extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public int getJobID(){
+        JobsDbHelper JBDH= new JobsDbHelper(NeedHand.this);
+        Cursor res=JBDH.getAllData();
+        int id=0;
+        while(res.moveToNext()){
+            id=Integer.valueOf(res.getString(0));
+        }
+        return id;
     }
 
     public boolean checkInput(){
