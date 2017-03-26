@@ -88,7 +88,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
@@ -97,7 +97,7 @@
             android:text="University:" />
 
         <EditText
-            android:id="@+id/descriptionTxt"
+            android:id="@+id/uniTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
@@ -113,7 +113,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Skills:" />
+            android:text="Skills:"
+            android:id="@+id/skillsTxt" />
 
         <EditText
             android:id="@+id/skillsTxt"
