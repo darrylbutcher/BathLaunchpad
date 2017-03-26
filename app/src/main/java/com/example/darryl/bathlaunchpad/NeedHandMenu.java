@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class NeedHandMenu extends AppCompatActivity {
 
-    private int JobID;
+    private static int JobID;
     public Button viewApp;
     public Button viewJob;
 
@@ -23,12 +24,13 @@ public class NeedHandMenu extends AppCompatActivity {
     }
 
     public void viewApplicantsThread(){
-        viewApp=(Button)findViewById(R.id.ViewOffersBtn);
+        viewApp=(Button)findViewById(R.id.ViewAppliBtn);
         viewApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(NeedHandMenu.this,ViewApplicants.class);
                 intent.putExtra("JobID",JobID);
+                Toast.makeText(NeedHandMenu.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });

@@ -58,6 +58,23 @@ public class EmployeeDbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public String getName(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        if(id==0){
+            id=1;
+        }
+        String num=String.valueOf(id);
+        Cursor res = db.rawQuery("select FIRST_NAME from " + TABLE_NAME+ " where ID="+num+" ", null);
+        res.moveToFirst();
+        String poo=res.getString(0);
+        return poo;
+    }
+
+    public Cursor getAllDataOfUser(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME+" where ID="+ String.valueOf(id), null);
+        return res;
+    }
 
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();

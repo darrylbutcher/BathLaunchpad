@@ -75,7 +75,8 @@ public class FindJobs extends AppCompatActivity {
                 int JobID=array.get(0).getID();
                 array.remove(0);
                 myAppAdapter.notifyDataSetChanged();
-                //Add to found jobs database??
+                MatchesDbHelper MDBH= new MatchesDbHelper(FindJobs.this);
+                Boolean check=MDBH.insertData(UserID,JobID);
             }
 
             @Override

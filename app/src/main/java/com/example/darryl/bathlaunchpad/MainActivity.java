@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(need){
                     Intent intent= new Intent(MainActivity.this,NeedHand.class);
+                    intent.putExtra("first",true);
                     startActivity(intent);
+
                     need=false;
                 }else{
                     Intent intent= new Intent(MainActivity.this,NeedHandMenu.class);

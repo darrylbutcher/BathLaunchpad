@@ -62,6 +62,18 @@ public  class JobsDbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public String getName(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        if(id==0){
+            id=1;
+        }
+        String num=String.valueOf(id);
+        Cursor res = db.rawQuery("select TITLE from " + TABLE_NAME+ " where ID="+num+" ", null);
+        res.moveToFirst();
+        String poo=res.getString(0);
+        return poo;
+    }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);

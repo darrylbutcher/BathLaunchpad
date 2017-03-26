@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/pane">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -15,7 +14,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="APPLICANTS:"
+            android:text="USER PROFILE"
             style="@android:style/Widget.Material.TextView"
             tools:textAlignment="center"
             android:textColor="@android:color/background_dark"
@@ -24,12 +23,12 @@
 
 
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="0.25"
-        android:text=" :"
-        android:id="@+id/textBox" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25"
+            android:text="  Job Title:"
+            android:id="@+id/textBox" />
 
 
 

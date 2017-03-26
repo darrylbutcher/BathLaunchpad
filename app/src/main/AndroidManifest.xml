@@ -25,7 +25,8 @@
         <activity android:name=".ViewApplicants" />
         <activity android:name=".GiveHandMenu" />
         <activity android:name=".ViewOffers" />
-        <activity android:name=".NeedHandMenu"></activity>
+        <activity android:name=".NeedHandMenu" />
+        <activity android:name=".ViewProfile"></activity>
     </application>
 
 </manifest>

@@ -41,7 +41,9 @@ public class NeedHand extends AppCompatActivity {
                     if(isInserted){
                        Toast.makeText(NeedHand.this, "Job Added", Toast.LENGTH_LONG).show();
                         Intent intent= new Intent(NeedHand.this,NeedHandMenu.class);
-                        intent.putExtra("JobID",getJobID());
+                        int JobID= getJobID();
+                        Toast.makeText(NeedHand.this, String.valueOf(JobID), Toast.LENGTH_LONG).show();
+                        intent.putExtra("JobID",JobID);
                         startActivity(intent);
                         clearText();
                     }else{
