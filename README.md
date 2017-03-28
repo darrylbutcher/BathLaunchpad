@@ -1,6 +1,7 @@
 # Bath Launchpad 2017- H!RED
 *Authors: Darryl Butcher and Jake Bayley*
 
+![alt tag](https://raw.githubusercontent.com/darrylbutcher/BathLaunchpad2017-HIRED/master/app/src/main/res/drawable/logo.png)
 >A new platform linking informal jobs to an untapped talent pool
 
 ## What was Launchpad
